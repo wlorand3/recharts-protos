@@ -1,0 +1,11 @@
+/**
+  * File: charts.css
+  * Desc: all chart styles (until split into component style files)
+  **/
+
+.chart-container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}

@@ -1,18 +1,19 @@
 // react
-import React from 'react';
+import React from "react";
 
 // components
+import SimpleLineChart from "./components/SimpleLineChart";
 
 // styles
-import './styles/global-styles.css';
+import "./styles/globals.css";
 
 function App() {
   return (
     <>
       <header className="charts-header">
-         <h1>Recharts Protos</h1>
+        <h1>Recharts Protos</h1>
       </header>
-      <p>some body text for ya</p>
+      <SimpleLineChart />
     </>
   );
 }
