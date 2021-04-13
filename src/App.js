@@ -2,7 +2,8 @@
 import React from "react";
 
 // components
-import SimpleLineChart from "./components/SimpleLineChart";
+// import SimpleLineChart from "./components/SimpleLineChart";
+import RadialBarChartProto from "./components/RadialBarChartProto";
 
 // styles
 import "./styles/globals.css";
@@ -13,7 +14,7 @@ function App() {
       <header className="charts-header">
         <h1>Recharts Protos</h1>
       </header>
-      <SimpleLineChart />
+      <RadialBarChartProto />
     </>
   );
 }
