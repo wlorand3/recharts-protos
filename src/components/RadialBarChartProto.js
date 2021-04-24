@@ -21,7 +21,8 @@ function RadialBarChartProto() {
     uv_by_age
   );
 
-  const style = {
+  // no support for classNames for recharts <Legend
+  const legendWrapperStyle = {
     top: 0,
     left: 350,
     lineHeight: "24px",
@@ -52,7 +53,7 @@ function RadialBarChartProto() {
           height={140}
           layout="vertical"
           verticalAlign="middle"
-          wrapperStyle={style}
+          wrapperStyle={legendWrapperStyle}
         />
       </RadialBarChart>
     </div>

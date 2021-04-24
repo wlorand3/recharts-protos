@@ -32,7 +32,7 @@ h3 {
 
 .charts-header {
   align-items: center;
-  background-color: rgb(160, 160, 160);
+  background-color: rgba(160, 160, 160, 0.9);
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
@@ -41,4 +41,13 @@ h3 {
 .charts-header > h1 {
   margin: 10px 20px;
   padding: 0;
+}
+
+/* recharts overrides  */
+.recharts-radial-bar-background > path {
+  fill: rgba(160, 160, 160, 0.1);
+}
+
+.recharts-radial-bar-background > path:hover {
+  fill: rgba(10, 10, 10, 0.5);
 }

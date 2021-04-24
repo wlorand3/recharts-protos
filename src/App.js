@@ -15,6 +15,7 @@ function App() {
         <h1>Recharts Protos</h1>
       </header>
       <RadialBarChartProto />
+      {/* <SimpleLineChart /> */}
     </>
   );
 }
