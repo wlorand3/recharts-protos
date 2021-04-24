@@ -1,7 +1,7 @@
 export const uv_by_age = [
   {
     name: "18-24",
-    uv: 31.47,
+    uv: 16.47,
     pv: 2400,
     fill: "#8884d8",
   },
@@ -28,11 +28,5 @@ export const uv_by_age = [
     uv: 8.63,
     pv: 3908,
     fill: "#a4de6c",
-  },
-  {
-    name: "50+",
-    uv: 2.63,
-    pv: 4800,
-    fill: "#d0ed57",
   },
 ];

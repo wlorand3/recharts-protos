@@ -3,7 +3,7 @@ import React from "react";
 
 // recharts
 import {
-  LineChart,
+  LineChart, // container - svg ?!
   Line,
   CartesianGrid,
   XAxis,
@@ -18,7 +18,7 @@ import { measurements } from "../data/measurements";
 import "../styles/charts.css";
 
 function SimpleLineChart() {
-  console.log(measurements.length);
+  // console.log(measurements.length);
 
   const chartMargin = { top: 5, right: 50, bottom: 5, left: 0 };
 
