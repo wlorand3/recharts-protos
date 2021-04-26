@@ -2,7 +2,7 @@
 import React from "react";
 
 // data
-import { uv_by_age } from "../data/uv_by_age";
+import { security_products } from "../data/security_products";
 
 // recharts
 import {
@@ -14,38 +14,36 @@ import {
 
 // styles
 import "../styles/charts.css";
+import "../styles/SecurityProductsRadialChart.css";
 
 function RadialBarChartProto() {
-  console.log(
-    "🚀 ~ file: RadialBarChartProto.js ~ line 6 ~ uv_by_age",
-    uv_by_age
-  );
-
-  // no support for classNames for recharts <Legend
+  // must be inline style?
   const legendWrapperStyle = {
-    top: 0,
-    left: 350,
+    top: 50,
+    left: 425,
     lineHeight: "24px",
   };
 
   return (
     <div className="chart-container">
       <RadialBarChart
-        width={500}
-        height={300}
-        cx={150}
-        cy={150}
+        width={700}
+        height={500}
+        cx={250}
+        cy={190}
         innerRadius={20}
         outerRadius={140}
         barSize={15}
-        data={uv_by_age}
+        data={security_products}
+        startAngle={180}
+        endAngle={0}
       >
         <RadialBar
           minAngle={15}
           label={{ position: "insideStart", fill: "#fff" }}
           background
-          clockWise
-          dataKey="uv"
+          clockWise={false}
+          dataKey="installed"
         />
         <Legend
           iconSize={10}

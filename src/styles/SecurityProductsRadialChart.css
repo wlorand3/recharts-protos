@@ -1,0 +1,8 @@
+/* recharts overrides  */
+.recharts-radial-bar-background > path {
+  fill: rgba(160, 160, 160, 0.1);
+}
+
+.recharts-radial-bar-background > path:hover {
+  fill: rgba(10, 10, 10, 0.5);
+}
