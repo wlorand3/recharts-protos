@@ -6,10 +6,11 @@ import { security_products } from "../data/security_products";
 
 // recharts
 import {
-  ResponsiveContainer,
-  RadialBarChart,
-  RadialBar,
   Legend,
+  PolarGrid,
+  RadialBar,
+  RadialBarChart,
+  Tooltip,
 } from "recharts";
 
 // styles
@@ -19,21 +20,21 @@ import "../styles/SecurityProductsRadialChart.css";
 function RadialBarChartProto() {
   // must be inline style?
   const legendWrapperStyle = {
-    top: 50,
-    left: 425,
+    top: 40,
+    left: 510,
     lineHeight: "24px",
   };
 
   return (
     <div className="chart-container">
       <RadialBarChart
-        width={700}
-        height={500}
-        cx={250}
-        cy={190}
+        width={800}
+        height={600}
+        cx={280}
+        cy={220}
         innerRadius={20}
-        outerRadius={140}
-        barSize={15}
+        outerRadius={200}
+        barSize={20}
         data={security_products}
         startAngle={180}
         endAngle={0}
@@ -45,10 +46,13 @@ function RadialBarChartProto() {
           clockWise={false}
           dataKey="installed"
         />
+        <PolarGrid gridType="polygon" polarAngles={[160]} />
+        {/* <Tooltip /> */}
+
         <Legend
-          iconSize={10}
-          width={120}
-          height={140}
+          iconSize={15}
+          width={150}
+          height={180}
           layout="vertical"
           verticalAlign="middle"
           wrapperStyle={legendWrapperStyle}
