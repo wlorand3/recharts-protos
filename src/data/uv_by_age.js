@@ -3,7 +3,7 @@ export const uv_by_age = [
     name: "18-24",
     uv: 16.47,
     pv: 2400,
-    fill: "#8884d8",
+    // fill: "#8884d8",
   },
   {
     name: "25-29",
@@ -15,7 +15,7 @@ export const uv_by_age = [
     name: "30-34",
     uv: 15.69,
     pv: 1398,
-    fill: "#8dd1e1",
+    fill: "rgb(255, 45, 45)",
   },
   {
     name: "35-39",
