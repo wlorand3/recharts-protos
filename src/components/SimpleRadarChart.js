@@ -12,6 +12,7 @@ import {
 
 // data
 import { report_card } from "../data/report_card";
+import { email_threats } from "../data/email_threats";
 
 // styles
 import "../styles/charts.css";
@@ -19,29 +20,31 @@ import "../styles/charts.css";
 function SimpleRadarChart() {
   // test data access
   //   console.log(report_card.length); // 5
+  console.log("email threats", email_threats); // 1
 
   return (
     <div className="chart-container">
-      {/* <ResponsiveContainer width="80%" height="80%"> */}
-      <RadarChart
-        cx="50%"
-        cy="50%"
-        width={500}
-        height={500}
-        outerRadius="60%"
-        data={report_card}
-      >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
-        <Radar
-          name="Mike"
-          dataKey="A"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.5}
-        />
-      </RadarChart>
-      {/* </ResponsiveContainer> */}
+      <ResponsiveContainer width="75%" aspect={1}>
+        <RadarChart
+          cx="50%"
+          cy="50%"
+          width={500}
+          height={500}
+          outerRadius="60%"
+          innerRadius={10}
+          data={email_threats}
+        >
+          <PolarGrid gridType="polygon" />
+          <PolarAngleAxis dataKey="threat_type" />
+          <Radar
+            name="Umbrella"
+            dataKey="volume"
+            stroke="#8884d8"
+            fill="#8884d8"
+            fillOpacity={0.5}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
     </div>
   );
 }
