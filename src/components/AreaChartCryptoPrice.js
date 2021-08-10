@@ -5,20 +5,20 @@ import React from "react";
 import {
   Area,
   AreaChart,
-  CartesianGrid,
+  // CartesianGrid,
   ResponsiveContainer,
-  Tooltip,
+  // Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
 
 // date-fns
-import { format, parseISO, subDays } from "date-fns";
+import { subDays } from "date-fns";
 
 // dummy data - last 30 days, some value
 const data = [];
 for (let num = 30; num >= 0; num--) {
-  // push some objects into the data array
+  // push some objects into the data array to make a handy [] of {}
   data.push({
     date: subDays(new Date(), num).toISOString().substr(0, 10),
     value: (1 + Math.random()).toFixed(3), // randomize betw 1 and 2
