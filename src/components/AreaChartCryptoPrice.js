@@ -5,9 +5,9 @@ import React from "react";
 import {
   Area,
   AreaChart,
-  // CartesianGrid,
+  CartesianGrid,
   ResponsiveContainer,
-  // Tooltip,
+  Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
