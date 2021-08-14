@@ -14,8 +14,8 @@ function App() {
   return (
     <>
       <header className="charts-header">
-        {/* <h1>Security Products Installed on Devices</h1> */}
-        <h1>Email Threat Types</h1>
+        <h1>Security Products Installed on Devices</h1>
+        {/* <h1>Email Threat Types</h1> */}
       </header>
       {/* <SimpleRadarChart /> */}
       {/* <SecurityProductsRadialChart /> */}

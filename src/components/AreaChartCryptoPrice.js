@@ -5,15 +5,15 @@ import React from "react";
 import {
   Area,
   AreaChart,
-  CartesianGrid,
+  // CartesianGrid,
   ResponsiveContainer,
-  Tooltip,
+  // Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
 
 // date-fns
-import { format, parseISO, subDays } from "date-fns";
+import { subDays } from "date-fns";
 
 // Mock data - last 30 days de price
 const data = [];

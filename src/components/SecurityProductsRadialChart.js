@@ -10,7 +10,7 @@ import {
   PolarGrid,
   RadialBar,
   RadialBarChart,
-  Tooltip,
+  // Tooltip,
 } from "recharts";
 
 // styles

@@ -1,22 +1,27 @@
 export const email_threats = [
   {
     threat_type: "spam",
-    volume: 81,
+    volumeA: 81,
+    volumeB: 41,
   },
   {
     threat_type: "malware",
-    volume: 63,
+    volumeA: 63,
+    volumeB: 92,
   },
   {
     threat_type: "spoofing",
-    volume: 42,
+    volumeA: 42,
+    volumeB: 9,
   },
   {
     threat_type: "keylogging",
-    volume: 11,
+    volumeA: 11,
+    volumeB: 33,
   },
   {
     threat_type: "phishing",
-    volume: 69,
+    volumeA: 69,
+    volumeB: 25,
   },
 ];

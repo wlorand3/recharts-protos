@@ -3,7 +3,7 @@ import React from "react";
 
 // recharts
 import {
-  LineChart, // container - svg ?!
+  LineChart,
   Line,
   CartesianGrid,
   XAxis,
@@ -20,6 +20,7 @@ import "../styles/charts.css";
 function SimpleLineChart() {
   // console.log(measurements.length);
 
+  // use d3 margin convention
   const chartMargin = { top: 5, right: 50, bottom: 5, left: 0 };
 
   return (
