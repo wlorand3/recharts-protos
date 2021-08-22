@@ -1,7 +1,3 @@
-// react
-import React from "react";
-
-// recharts
 import {
   Area,
   AreaChart,
@@ -13,40 +9,59 @@ import {
 } from "recharts";
 
 // date-fns
-import { subDays } from "date-fns";
+import { format, parseISO, subDays } from "date-fns";
+
+// styles
+import "../styles/area-chart-crypto-price.css";
 
 // Mock data - last 30 days de price
 const data = [];
-let num = 30; // start 30 days back
+let num = 30; // start 30 days back and go to today
 for (num = 30; num >= 0; num--) {
-  // push some objects into the data array and voila an array of objects data structure for iterating over
   data.push({
     date: subDays(new Date(), num).toISOString().substr(0, 10),
     value: (Math.random() + 1).toFixed(2),
   });
 }
 
-//  Log the data
-console.log(`${JSON.stringify(data, null, 2)}`);
+const CustomTooltip = ({ active, payload, label }) => {
+  if (!active) return null;
+  return (
+    <div className="tooltip">
+      <h4>{format(parseISO(label), "eee, MMM d yyyy")}</h4>
+      <p>${payload[0].value} CAD</p>
+    </div>
+  );
+};
 
 function AreaChartCryptoPrice() {
   return (
     <>
-      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
-
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer
+        width="100%"
+        height={600}
+        className="chart-background"
+      >
         <AreaChart data={data}>
           <defs>
-            <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#2451B7" opacity="0.4" />
-              <stop offset="75%" stopColor="#2451B7" opacity="0.05" />
+            <linearGradient id="areaColorFade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2451B7" stopOpacity={1} />
+              <stop offset="90%" stop-color="#2451B7" stopOpacity={0.1} />
             </linearGradient>
           </defs>
 
-          <CartesianGrid vertical={false} opacity={0.4} />
-          <Area dataKey="value" stroke="#8884d8" fill="url(#color)" />
-          <Tooltip />
-          <XAxis dataKey="date" />
+          <CartesianGrid vertical={false} opacity={0.3} />
+          <Area dataKey="value" stroke="#8884d8" fill="url('#areaColorFade')" />
+          <Tooltip content={<CustomTooltip />} />
+          <XAxis
+            dataKey="date"
+            axisLine={false}
+            tickLine={false}
+            tickFormatter={dateStr => {
+              const date = parseISO(dateStr);
+              return date.getDate() % 7 === 0 ? format(date, "MMM d") : "";
+            }}
+          />
           <YAxis
             dataKey="value"
             axisLine={false}
