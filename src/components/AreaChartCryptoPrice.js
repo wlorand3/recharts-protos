@@ -14,7 +14,7 @@ import { format, parseISO, subDays } from "date-fns";
 // styles
 import "../styles/area-chart-crypto-price.css";
 
-// Mock data - last 30 days de price
+// Mock data - last 30 days de price // create an [] of {}
 const data = [];
 let num = 30; // start 30 days back and go to today
 for (num = 30; num >= 0; num--) {
