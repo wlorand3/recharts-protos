@@ -21,7 +21,7 @@ function RechartsFunnelChart() {
             position="right"
             fill="#000"
             stroke="#000"
-            dataKey="name"
+            dataKey="label"
             style={{ marginLeft: "10px" }}
           />
         </Funnel>

@@ -1,21 +1,21 @@
 export const sales_process_data = [
   {
-    name: "Total Market",
+    label: "Total Market",
     value: 66200,
     fill: "#8884d8",
   },
   {
-    name: "Prospects",
+    label: "Prospects",
     value: 24480,
     fill: "#83a6ed",
   },
   {
-    name: "Leads",
+    label: "Leads",
     value: 7390,
     fill: "#8dd1e1",
   },
   {
-    name: "Sales",
+    label: "Sales",
     value: 2181,
     fill: "#82ca9d",
   },
