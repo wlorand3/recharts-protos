@@ -10,7 +10,7 @@ import { sales_process_data } from "../data/sales_process_data";
 // styles
 import "../styles/charts.css";
 
-function SimpleFunnelChart() {
+function RechartsFunnelChart() {
   console.log(sales_process_data.length); // 4
 
   return (
@@ -22,6 +22,7 @@ function SimpleFunnelChart() {
             fill="#000"
             stroke="#000"
             dataKey="name"
+            style={{ marginLeft: "10px" }}
           />
         </Funnel>
         <Tooltip />
@@ -30,4 +31,4 @@ function SimpleFunnelChart() {
   );
 }
 
-export default SimpleFunnelChart;
+export default RechartsFunnelChart;
