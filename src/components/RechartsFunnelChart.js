@@ -2,21 +2,26 @@
 import React from "react";
 
 // recharts
-import { Funnel, FunnelChart, LabelList, Tooltip } from "recharts";
+import {
+  Funnel,
+  FunnelChart,
+  LabelList,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
 
 // data
-import { sales_process_data } from "../data/sales_process_data";
+// import { sales_process_data } from "../data/sales_process_data";
+import { threat_hunt_data } from "../data/threat_hunt_data";
 
 // styles
 import "../styles/charts.css";
 
 function RechartsFunnelChart() {
-  console.log(sales_process_data.length); // 4
-
   return (
     <div className="chart-container">
       <FunnelChart width={730} height={250}>
-        <Funnel dataKey="value" data={sales_process_data} isAnimationActive>
+        <Funnel dataKey="value" data={threat_hunt_data} isAnimationActive>
           <LabelList
             position="right"
             fill="#000"
