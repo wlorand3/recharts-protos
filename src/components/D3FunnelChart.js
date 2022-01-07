@@ -16,24 +16,24 @@ function D3FunnelChart() {
     if (chartRef.current) {
       const chartOptions = {
         chart: {
-          animate: 250,
-          bottomPinch: 0, // demo-2
+          animate: 333,
+          bottomPinch: 1, // demo-2
           curve: {
-            enabled: false, // demo-1
+            enabled: true, // demo-1
             height: 20,
           },
           inverted: false, // demo-3
-          height: 400,
-          width: 600,
+          height: 300,
+          width: 500,
         },
         block: {
-          barOverlay: false, // demo-4
+          barOverlay: true, // demo-4
           dynamicHeight: false, // demo-5
           fill: {
-            type: "solid", // demo-6  "gradient"
-            // scale: ["#607ac8", "#188c7c", "#5f842e", "#937530"], // demo-0 (csx chart-colors)
+            type: "gradient", // demo-6  "gradient"
+            scale: ["#607ac8", "#188c7c", "#5f842e", "#937530"], // demo-0 (csx chart-colors)
           },
-          highlight: false, // demo-7
+          highlight: true, // demo-7
         },
         events: {
           click: {
@@ -54,6 +54,7 @@ function D3FunnelChart() {
       };
       const chart = new D3Funnel("#funnel");
       chart.draw(threat_hunt_data, chartOptions);
+      // chart.draw(sales_process_data, chartOptions);
     }
   }, []);
 
