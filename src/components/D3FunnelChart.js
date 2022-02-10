@@ -30,7 +30,8 @@ function D3FunnelChart() {
         dynamicHeight: false, // demo-5
         fill: {
           type: "gradient", // demo-6  "gradient"
-          scale: ["#607ac8", "#188c7c", "#5f842e", "#937530"], // demo-0 (csx chart-colors) - get from css export
+          scale: ["#607ac8", "#188c7c", "#5f842e", "#937530"], // demo-0 (csx dark chart-colors)
+          // scale: ["#87a6ff", "#3cccba", "#94b666", "#e1b54f"], // (csx medium chart-colors: medium-blue, medium-teal, medium-green, medium-yellow)
         },
         highlight: true, // demo-7
       },
