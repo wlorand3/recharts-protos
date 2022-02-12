@@ -1,26 +1,26 @@
 export const threat_hunt_data = [
   {
+    key: "intelligence_driven",
     label: "Intelligence-Driven",
     value: 42900,
-    fill: "#607ac8",
-    // backgroundColor: "#607ac8",
+    linkl_uri: "https://security.cisco.com/",
   },
   {
+    key: "tactically_driven",
     label: "Tactically-Driven",
     value: 22100,
-    fill: "#188c7c",
-    // backgroundColor: "#188c7c",
+    linkl_uri: "https://security.cisco.com/",
   },
   {
+    key: "anomoly_driven",
     label: "Anomoly-Driven",
     value: 10100,
-    fill: "#5f842e",
-    // backgroundColor: "#5f842e",
+    linkl_uri: "https://security.cisco.com/",
   },
   {
+    key: "confirmed_threats",
     label: "Confirmed Threats",
     value: 3300,
-    fill: "#937530",
-    // backgroundColor: "#937530",
+    linkl_uri: "https://security.cisco.com/",
   },
 ];
