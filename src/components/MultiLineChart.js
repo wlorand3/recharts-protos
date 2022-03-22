@@ -1,25 +1,26 @@
-// react
 import React from "react";
 
-// recharts
 import {
-  LineChart,
-  Line,
   CartesianGrid,
+  Line,
+  LineChart,
+  Tooltip,
   XAxis,
   YAxis,
-  Tooltip,
 } from "recharts";
 
-// data
 import { measurements } from "../data/measurements";
 
-// styles
 import "../styles/charts.css";
 
-function SimpleLineChart() {
-  // use d3 margin convention
+function MultiLineChart() {
   const chartMargin = { top: 5, right: 50, bottom: 5, left: 0 };
+
+  const mockData = [
+    { key: "amt", color: "#FF0000" },
+    { key: "uv", color: "#00FF00" },
+    { key: "pv", color: "#0000FF" },
+  ];
 
   return (
     <div className="chart-container">
@@ -29,14 +30,19 @@ function SimpleLineChart() {
         data={measurements}
         margin={chartMargin}
       >
-        <Line dataKey="uv" type="monotone" stroke="#8884d8" />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
         <XAxis dataKey="name" />
         <YAxis />
+        {mockData.map(dataObj => {
+          return (
+            <Line dataKey={dataObj.key} type="natural" stroke={dataObj.color} />
+          );
+        })}
+
         <Tooltip />
       </LineChart>
     </div>
   );
 }
 
-export default SimpleLineChart;
+export default MultiLineChart;

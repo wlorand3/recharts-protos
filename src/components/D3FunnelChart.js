@@ -10,7 +10,7 @@ import { threat_hunt_data } from "../data/threat_hunt_data";
 import "../styles/charts.css";
 
 function D3FunnelChart() {
-  const chartRef = useRef(null);
+  const funnelChartRef = useRef(null);
 
   const chartOptions = useMemo(() => {
     return {
@@ -31,7 +31,6 @@ function D3FunnelChart() {
         fill: {
           type: "gradient", // demo-6  "gradient"
           scale: ["#607ac8", "#188c7c", "#5f842e", "#937530"], // demo-0 (csx dark chart-colors)
-          // scale: ["#87a6ff", "#3cccba", "#94b666", "#e1b54f"], // (csx medium chart-colors: medium-blue, medium-teal, medium-green, medium-yellow)
         },
         highlight: true, // demo-7
       },
@@ -56,13 +55,15 @@ function D3FunnelChart() {
 
   useEffect(() => {
     // key dev distinction to check for the .current in a useEffect (whiteboard!)
-    if (chartRef.current) {
-      const chart = new D3Funnel("#funnel"); // check it with the new keyword (class style)
+    if (funnelChartRef.current) {
+      // const chart = new D3Funnel("#funnel"); // check it with the new keyword (class style)
+      const chart = new D3Funnel(".chart-container");
+
       chart.draw(threat_hunt_data, chartOptions); // key draw() method
     }
   }, [chartOptions]);
 
-  return <div id="funnel" ref={chartRef} className="chart-container"></div>; // container div
+  return <div ref={funnelChartRef} className="chart-container"></div>; // container div
 }
 
 export default D3FunnelChart;
