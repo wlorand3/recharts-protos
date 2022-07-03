@@ -23,7 +23,7 @@ function MultiLineChart() {
   ];
 
   return (
-    <div className="chart-container">
+    <div className="chart-container chart-box">
       <LineChart
         width={600}
         height={300}
