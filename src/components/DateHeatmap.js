@@ -1,20 +1,22 @@
 // react
 import React from "react";
 
-// libs
+// libs in play
 import CalendarHeatmap from "react-calendar-heatmap";
 import ReactTooltip from "react-tooltip";
 
 // data
 // import { june_values } from "../data/counts_over_time_data";
 
-// styles (+ required react-calendar-heatmap styles)
+// styles (+ required react-calendar-heatmap library styles)
 import "react-calendar-heatmap/dist/styles.css";
 import "../styles/charts.css";
 
+// component function
 function DateHeatmap() {
   const today = new Date();
 
+  // seed some data
   const randomValues = getRange(200).map(index => {
     return {
       date: shiftDate(today, -index),
@@ -22,21 +24,25 @@ function DateHeatmap() {
     };
   });
 
+  console.log("randome values is: ", randomValues);
+
   // temp data
 
+  // Simply provide a container and render the lib component with the props it expects
   return (
     <div className="chart-container chart-box">
       <CalendarHeatmap
-        // startDate={new Date("2022-06-01")}
-        // endDate={new Date("2022-06-30")}
         startDate={shiftDate(today, -150)}
         endDate={today}
-        // values={june_values}
+        // startDate={new Date("2022-06-01")}
+        // endDate={new Date("2022-06-30")}
+        // Values stores Data
         values={randomValues}
         classForValue={value => {
           if (!value) return "color-empty";
           return `color-github-${value.count}`;
         }}
+        // react-tooltip
         tooltipDataAttrs={value => {
           return {
             "data-tip": `${value.date.toISOString().slice(0, 10)} has count: ${
@@ -49,14 +55,15 @@ function DateHeatmap() {
         //     "data-tip": `${value.date} has count: ${value.count}`,
         //   };
         // }}
-        showWeekdayLabels={true}
-        gutterSize={1}
         horizontal={true}
         // horizontal={false}
-        showMonthLabels={true}
+        gutterSize={1}
+        showWeekdayLabels={true}
+        showMonthLabels={true} // depends on period data value
         onClick={value => alert(`Clicked on value with count: ${value.count}`)}
       />
-      <ReactTooltip />
+      {/* Easy Add React Tooltip -likely usesthe tooltipDataAttrs prop! */}
+      <ReactTooltip type="light" />
     </div>
   ); // container div
 

@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <header className="charts-header">
-        <h1>Date Heatmap</h1>
+        <h1>React Calendar Heatmap Proto</h1>
         {/* <h1>Threat Hunt Funnel Chart</h1> */}
         {/* <h1>Recharts Funnel Chart</h1> */}
         {/* <h1>Area Chart Crypto Price</h1> */}

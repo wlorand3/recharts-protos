@@ -4,17 +4,11 @@
   **/
 
 .chart-container {
+  border: 1px solid green;
   display: flex;
   justify-content: center;
   align-items: middle;
   max-width: 80vw;
   min-width: 15vw;
   padding: 0 50px;
-}
-
-.chart-box {
-  /* border: 1px solid green;
-  padding: 50px;
-  max-width: 400px; */
-
 }
