@@ -32,10 +32,10 @@ function DateHeatmap() {
   return (
     <div className="chart-container chart-box">
       <CalendarHeatmap
-        // startDate={shiftDate(today, -125)}
-        // endDate={today}
-        startDate={new Date("2022-06-01")}
-        endDate={new Date("2022-06-30")}
+        startDate={shiftDate(today, -125)}
+        endDate={today}
+        // startDate={new Date("2022-06-01")}
+        // endDate={new Date("2022-06-30")}
         // Values stores Data
         values={randomValues}
         classForValue={value => {
@@ -55,8 +55,8 @@ function DateHeatmap() {
         //     "data-tip": `${value.date} has count: ${value.count}`,
         //   };
         // }}
-        // horizontal={true}
-        horizontal={false}
+        horizontal={true}
+        // horizontal={false}
         gutterSize={1}
         showWeekdayLabels={true} //
         showMonthLabels={true} // depends on period data value
