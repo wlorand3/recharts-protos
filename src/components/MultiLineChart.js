@@ -20,6 +20,7 @@ function MultiLineChart() {
     { key: "amt", color: "#FF0000" },
     { key: "uv", color: "#00FF00" },
     { key: "pv", color: "#0000FF" },
+    { key: "yyz", color: "#333333" },
   ];
 
   return (
@@ -34,6 +35,7 @@ function MultiLineChart() {
         <XAxis dataKey="name" />
         <YAxis />
         {mockData.map(dataObj => {
+          console.log("dataObj is:", dataObj);
           return (
             <Line dataKey={dataObj.key} type="natural" stroke={dataObj.color} />
           );
