@@ -3,8 +3,8 @@ import React from "react";
 
 // recharts
 import {
-  PolarAngleAxis,
-  PolarGrid,
+  PolarAngleAxis, // shows labels
+  PolarGrid, // shows grid
   Radar,
   RadarChart,
   ResponsiveContainer,
@@ -18,9 +18,25 @@ import { email_threats } from "../data/email_threats";
 import "../styles/charts.css";
 
 function SimpleRadarChart() {
-  // test data access
-  //   console.log(report_card.length); // 5
-  // console.log("email threats", email_threats); // 1
+  // holy smokes this works - thanx stack overflow
+  function customTick({ payload, x, y, textAnchor, stroke, radius }) {
+    return (
+      <g className="recharts-layer recharts-polar-angle-axis-tick">
+        <text
+          radius={radius}
+          stroke={stroke}
+          x={x}
+          y={y}
+          className="recharts-text recharts-polar-angle-axis-tick-value redText"
+          text-anchor={textAnchor}
+        >
+          <tspan x={x} dy="0em">
+            {payload.value}
+          </tspan>
+        </text>
+      </g>
+    );
+  }
 
   return (
     <div className="chart-container">
@@ -28,14 +44,19 @@ function SimpleRadarChart() {
         <RadarChart
           cx="50%"
           cy="50%"
-          width={500}
-          height={500}
-          outerRadius="60%"
-          innerRadius={10}
+          width={250}
+          height={250}
+          outerRadius="60%" // default: "80%" -- can squeeze out the axis labels -- reduce to give them more room
+          innerRadius={3}
           data={email_threats}
         >
-          <PolarGrid gridType="polygon" />
-          <PolarAngleAxis dataKey="threat_type" />
+          <PolarGrid gridType="polygon" /> {/* polygon || circle */}
+          <PolarAngleAxis
+            dataKey="threat_type"
+            orientation="outer"
+            tick={customTick}
+          />
+          />
           <Radar
             name="Umbrella"
             dataKey="volumeA"

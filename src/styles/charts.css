@@ -4,11 +4,16 @@
   **/
 
 .chart-container {
-  border: 1px solid green;
+  border: 3px solid purple;
   display: flex;
   justify-content: center;
   align-items: middle;
   max-width: 80vw;
   min-width: 15vw;
   padding: 0 50px;
+}
+
+.redText {
+  fill: red;
+  font-size: 10px;
 }

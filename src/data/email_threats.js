@@ -1,7 +1,7 @@
 export const email_threats = [
   {
-    threat_type: "spam",
-    volumeA: 81,
+    threat_type: "spam", // PolarAngleAxis dataKey for axis labels
+    volumeA: 50, // Radar dataKey for volumeA
     volumeB: 41,
   },
   {
