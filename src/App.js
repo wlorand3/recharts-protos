@@ -2,7 +2,8 @@
 import React from "react";
 
 // components
-import SimpleRadarChart from "./components/SimpleRadarChart";
+// import SimpleRadarChart from "./components/SimpleRadarChart";
+import MitreTacticsRadarChart from "./components/MitreTacticsRadarChart";
 // import SimpleLineChart from "./components/SimpleLineChart";
 // import MultiLineChart from "./components/MultiLineChart";
 // import SecurityProductsRadialChart from "./components/SecurityProductsRadialChart";
@@ -18,7 +19,8 @@ function App() {
   return (
     <>
       <header className="charts-header">
-        <h1>Simple Radar Chart</h1>
+        <h1>Mitre Tactics Covered Radar Chart</h1>
+        {/* <h1>Simple Radar Chart</h1> */}
         {/* <h1>React Calendar Heatmap Proto</h1> */}
         {/* <h1>Threat Hunt Funnel Chart</h1> */}
         {/* <h1>Recharts Funnel Chart</h1> */}
@@ -27,7 +29,8 @@ function App() {
         {/* <h1>Simple Line Chart</h1> */}
         {/* <h1>Multi Line Chart</h1> */}
       </header>
-      <SimpleRadarChart />
+      <MitreTacticsRadarChart />
+      {/* <SimpleRadarChart /> */}
       {/* <SecurityProductsRadialChart /> */}
       {/* <SimpleLineChart /> */}
       {/* <MultiLineChart /> */}

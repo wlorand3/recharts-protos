@@ -17,3 +17,9 @@
   fill: red;
   font-size: 10px;
 }
+
+.tacticAxisLabel {
+  fill: #889099; /* var(--base-text-weak-default);  */
+  font-size: 12px;
+  font-weight: 500;
+}
