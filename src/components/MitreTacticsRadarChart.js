@@ -15,8 +15,33 @@ import "../styles/charts.css";
 
 function MitreTacticsRadarChart() {
   // @TODO: rename this to be more tailored to the mitre tactics chart
+  // renderTacticAxisLabel
   // customAxisLabel sounds good
-  function customTick({ payload, x, y, textAnchor, stroke, radius }) {
+  /*
+    * add this in to func
+    const labelWords = payload.value.split(' ');
+
+   {labelWords.map((word, index) => (
+          <tspan x={x} dy={`${index * 1.2}em`} key={`${word}-${index}`>
+            {word}
+          </tspan>
+
+    *OLD:
+    {/* <tspan x={x} dy="0em">
+            {payload.value}
+          </tspan>
+           */
+
+  function customTick({
+    payload,
+    x,
+    y,
+    textAnchor = "middle",
+    stroke,
+    radius,
+  }) {
+    // split the label into two lines
+    const labelWords = payload.value.split(/ (.+)/);
     return (
       <g className="recharts-layer recharts-polar-angle-axis-tick">
         <text
@@ -24,12 +49,14 @@ function MitreTacticsRadarChart() {
           stroke={stroke}
           x={x}
           y={y}
-          className="recharts-text recharts-polar-angle-axis-tick-value tacticAxisLabel"
-          text-anchor={textAnchor}
+          className="recharts-text recharts-polar-angle-axis-tick-value"
+          textAnchor={textAnchor}
         >
-          <tspan x={x} dy="0em">
-            {payload.value}
-          </tspan>
+          {labelWords.map((word, index) => (
+            <tspan x={x} dy={`${index * 1.1}em`} key={`${word}-${index}`}>
+              {word}
+            </tspan>
+          ))}
         </text>
       </g>
     );
